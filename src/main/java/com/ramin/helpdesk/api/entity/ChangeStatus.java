@@ -1,6 +1,6 @@
 package com.ramin.helpdesk.api.entity;
 
-import com.ramin.helpdesk.enums.StatusEnum;
+import com.ramin.helpdesk.api.enums.StatusEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;

@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.enums;
+package com.ramin.helpdesk.api.enums;
 
 public enum ProfileEnum {
 
