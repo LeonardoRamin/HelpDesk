@@ -1,2 +1,2 @@
 # HelpDesk
-Project utilizing Spring Data with MongoDB, Spring Security and Angular
+Project utilizing Spring Data with MongoDB, Spring Boot and Spring Security
