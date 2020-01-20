@@ -1,8 +1,8 @@
 package com.ramin.helpdesk.api.service;
 
-import com.ramin.helpdesk.api.entity.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
+import com.ramin.helpdesk.api.entity.User;
 
 public interface UserService {
 

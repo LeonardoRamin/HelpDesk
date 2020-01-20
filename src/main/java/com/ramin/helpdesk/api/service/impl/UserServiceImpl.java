@@ -5,6 +5,7 @@ import com.ramin.helpdesk.api.repository.UserRepository;
 import com.ramin.helpdesk.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,16 +26,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(String id) {
-        return userRepository.findById(id);
+        return userRepository.findById(id).get();
     }
 
     @Override
     public void delete(String id) {
-
+    	userRepository.deleteById(id);
     }
 
     @Override
     public Page<User> findAll(int page, int count) {
-        return null;
+    	PageRequest pageable = PageRequest.of(page, count);
+        return userRepository.findAll(pageable);
     }
 }
