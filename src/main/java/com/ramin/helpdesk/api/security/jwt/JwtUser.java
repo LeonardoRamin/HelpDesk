@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.api.entity.jwt;
+package com.ramin.helpdesk.api.security.jwt;
 
 import java.util.Collection;
 

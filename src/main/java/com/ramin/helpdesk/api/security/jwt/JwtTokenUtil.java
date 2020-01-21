@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.api.entity.jwt;
+package com.ramin.helpdesk.api.security.jwt;
 
 import java.io.Serializable;
 import java.util.Date;
