@@ -49,7 +49,7 @@ public class UserController {
 				return ResponseEntity.badRequest().body(response);
 			}
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
-			User userPersisted = (User) userService.createOrUpdate(user);
+			User userPersisted = userService.createOrUpdate(user);
 			response.setData(userPersisted);
 		} catch (DuplicateKeyException dE) {
 			response.getErrors().add("E-mail already registered !");
@@ -80,7 +80,7 @@ public class UserController {
 				return ResponseEntity.badRequest().body(response);
 			}
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
-			User userPersisted = (User) userService.createOrUpdate(user);
+			User userPersisted = userService.createOrUpdate(user);
 			response.setData(userPersisted);
 		} catch (Exception e) {
 			response.getErrors().add(e.getMessage());
@@ -105,7 +105,7 @@ public class UserController {
 	public ResponseEntity<Response<User>> findById(@PathVariable("id") String id) {
 		Response<User> response = new Response<User>();
 		Optional<User> userOptional = userService.findById(id);
-		User user = userOptional.get();
+		User user = userOptional.orElse(null);
 		if (user == null) {
 			response.getErrors().add("Register not found id:" + id);
 			return ResponseEntity.badRequest().body(response);
@@ -119,7 +119,7 @@ public class UserController {
 	public ResponseEntity<Response<String>> delete(@PathVariable("id") String id) {
 		Response<String> response = new Response<String>();
 		Optional<User> userOptional = userService.findById(id);
-		User user = userOptional.get();
+		User user = userOptional.orElse(null);
 		if (user == null) {
 			response.getErrors().add("Register not found id:" + id);
 			return ResponseEntity.badRequest().body(response);
