@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.api.entity;
+package com.ramin.helpdesk.api.security.entity;
 
 import com.ramin.helpdesk.api.enums.StatusEnum;
 import org.springframework.data.annotation.Id;

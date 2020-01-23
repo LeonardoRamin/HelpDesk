@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class JwtUser implements UserDetails {
 
-	private static final long serialVersionUID = -6033555572358708028L;
+	private static final long serialVersionUID = 1L;
 	
 	private final String id;
 	private final String username;
@@ -44,6 +44,7 @@ public class JwtUser implements UserDetails {
 		return username;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
@@ -63,7 +64,7 @@ public class JwtUser implements UserDetails {
 	
 	@Override
 	public boolean isEnabled() {
-		return false;
+		return true;
 	}
 	
 	

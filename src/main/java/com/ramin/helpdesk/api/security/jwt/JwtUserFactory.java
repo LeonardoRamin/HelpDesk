@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import com.ramin.helpdesk.api.entity.User;
 import com.ramin.helpdesk.api.enums.ProfileEnum;
+import com.ramin.helpdesk.api.security.entity.User;
 
 public class JwtUserFactory {
 	
-	public JwtUserFactory() {
+	private JwtUserFactory() {
 	}
 	
 	public static JwtUser create(User user) {

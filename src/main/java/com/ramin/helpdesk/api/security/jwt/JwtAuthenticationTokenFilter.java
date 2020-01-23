@@ -23,7 +23,6 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter{
 	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 	
-	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		String authToken = request.getHeader("Authorization");

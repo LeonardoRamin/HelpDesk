@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,15 +21,15 @@ import com.ramin.helpdesk.api.security.jwt.JwtAuthenticationTokenFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private JwtAuthenticationEntryPoint unauthorizedHandler;
-	
+
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
+
 	@Autowired
 	public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -38,10 +39,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
 	public JwtAuthenticationTokenFilter authenticationTokenFilterBean() throws Exception {
 		return new JwtAuthenticationTokenFilter();
+	}
+	
+	@Bean
+	public AuthenticationManager customAuthenticationManager() throws Exception {
+	  return authenticationManager();
 	}
 	
 	@Override

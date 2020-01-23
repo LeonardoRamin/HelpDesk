@@ -1,7 +1,8 @@
 package com.ramin.helpdesk.api.repository;
 
-import com.ramin.helpdesk.api.entity.ChangeStatus;
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.ramin.helpdesk.api.security.entity.ChangeStatus;
 
 public interface ChangeStatusRepository extends MongoRepository<ChangeStatus, String> {
 

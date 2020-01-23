@@ -1,9 +1,10 @@
 package com.ramin.helpdesk.api.repository;
 
-import com.ramin.helpdesk.api.entity.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.ramin.helpdesk.api.security.entity.Ticket;
 
 public interface TicketRepository extends MongoRepository<Ticket, String> {
 
