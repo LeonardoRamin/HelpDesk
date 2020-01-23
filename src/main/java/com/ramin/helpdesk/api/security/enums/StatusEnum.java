@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.api.enums;
+package com.ramin.helpdesk.api.security.enums;
 
 public enum StatusEnum {
 
@@ -9,7 +9,7 @@ public enum StatusEnum {
     Disapproved,
     Closed;
 
-    public StatusEnum getStatus(String status){
+    public static StatusEnum getStatus(String status){
         switch (status){
             case "New": return New;
             case "Assigned": return Assigned;

@@ -1,11 +1,12 @@
 package com.ramin.helpdesk.api.security.entity;
 
-import com.ramin.helpdesk.api.enums.PriorityEnum;
-import com.ramin.helpdesk.api.enums.StatusEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.ramin.helpdesk.api.security.enums.PriorityEnum;
+import com.ramin.helpdesk.api.security.enums.StatusEnum;
 
 import java.util.Date;
 import java.util.List;

@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.ramin.helpdesk.api.enums.ProfileEnum;
 import com.ramin.helpdesk.api.repository.UserRepository;
 import com.ramin.helpdesk.api.security.entity.User;
+import com.ramin.helpdesk.api.security.enums.ProfileEnum;
 
 @SpringBootApplication
 public class HelpDeskApplication {

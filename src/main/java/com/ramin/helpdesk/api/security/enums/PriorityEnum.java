@@ -1,4 +1,4 @@
-package com.ramin.helpdesk.api.enums;
+package com.ramin.helpdesk.api.security.enums;
 
 public enum PriorityEnum {
 

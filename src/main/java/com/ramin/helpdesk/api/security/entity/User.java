@@ -1,9 +1,10 @@
 package com.ramin.helpdesk.api.security.entity;
 
-import com.ramin.helpdesk.api.enums.ProfileEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.ramin.helpdesk.api.security.enums.ProfileEnum;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
